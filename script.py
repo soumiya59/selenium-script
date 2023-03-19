@@ -13,18 +13,18 @@ from webdriver_manager.firefox import GeckoDriverManager
 from webdriver_manager.opera import OperaDriverManager
 
 """
-Below the script is configured set to use chrome. Be sure to change it according to the browser you use.
+Below the script is configured to use chrome. Be sure to change it according to the browser you use
 """
 browser = "Chrome"
 
-## INPUT ##
+## INPUT
 print("\n")
 print("Write recipient phone number in format +[Country Code][phone number]:")
 phone_no = str(input())
 print("\nWrite message:")
 message = str(input())
 
-## HELPERS ##
+## HELPERS 
 def modify_number(phone_no):
     phone_no = phone_no.replace(" ", "").replace("-", "").replace("(", "").replace(")", "")
     return phone_no
@@ -58,7 +58,7 @@ def set_browser(browser):
     except:
         raise Exception("Browser not found")
 
-## SCRIPT ##
+## SCRIPT
 phone_no = modify_number(phone_no)
 if (validate_number(phone_no)):
     driver = set_browser(browser)
